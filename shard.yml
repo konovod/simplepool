@@ -1,0 +1,9 @@
+name: simplepool
+version: 0.1.0
+
+authors:
+  - konovod <konovod@gmail.com>
+
+crystal: 1.7.2
+
+license: MIT
