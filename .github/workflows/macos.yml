@@ -1,0 +1,13 @@
+name: MacOS CI
+
+on: [push,pull_request]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: oprypin/install-crystal@v1
+        with:
+          crystal: latest
+      - uses: actions/checkout@v2
+      - run: crystal spec
+      - run: crystal spec -Dpreview_mt

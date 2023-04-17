@@ -1,0 +1,10 @@
+name: Windows CI
+
+on: [push,pull_request]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: oprypin/install-crystal@v1
+      - uses: actions/checkout@v2
+      - run: crystal spec
