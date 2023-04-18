@@ -58,10 +58,10 @@ class SimplePool(T)
   end
 
   # Yield a block with object from a pool. Object will be automatatically returned to the pool after block completion
-  def use(&block : (T) -> U) : U forall U
+  def use(& : (T) -> U) : U forall U
     object = get
     begin
-      block.call(object)
+      yield(object)
     ensure
       self.return(object)
     end
